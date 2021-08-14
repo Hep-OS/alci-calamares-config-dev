@@ -8,7 +8,7 @@
 # Additional styling can be done using the stylesheet.qss
 # file, also in the branding directory.
 ---
-componentName:  default
+componentName:  hepos
 
 
 ### WELCOME / OVERALL WORDING
@@ -121,13 +121,13 @@ navigation: widget
 # are visible as buttons there if the corresponding *show* keys
 # are set to "true" (they can also be overridden).
 strings:
-    productName:         ALCI
-    shortProductName:    ALCI
-    version:             2021.01.1
-    shortVersion:        2020.01.1
-    versionedName:       ALCI
-    shortVersionedName:  ALCI
-    bootloaderEntryName: Generic
+    productName:         HepOS
+    shortProductName:    HepOS
+    version:             0.1
+    shortVersion:        0.1
+    versionedName:       HepOS
+    shortVersionedName:  HepOS
+    bootloaderEntryName: HepOS
 
 # These images are loaded from the branding module directory.
 #
@@ -161,7 +161,7 @@ images:
     productIcon:         "squid.png"
     productLogo:         "squid.png"
     # productWallpaper:    "wallpaper.png"
-    productWelcome:      "2-alci.png"
+    productWelcome:      "2-hepos.png"
 
 # Colors for text and background components.
 #
@@ -178,7 +178,7 @@ style:
    sidebarBackground:    "#292F34"
    sidebarText:          "#FFFFFF"
    sidebarTextSelect:    "#292F34"
-   sidebarTextHighlight: "#D35400"
+   sidebarTextHighlight: "#FF69B4"
 
 ### SLIDESHOW
 #
