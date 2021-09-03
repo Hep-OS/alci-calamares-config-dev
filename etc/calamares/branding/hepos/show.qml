@@ -1,11 +1,23 @@
-/* === This file is part of Calamares - <https://calamares.io> ===
+/* === This file is part of Calamares - <http://github.com/calamares> ===
  *
- *   SPDX-FileCopyrightText: 2015 Teo Mrnjavac <teo@kde.org>
- *   SPDX-FileCopyrightText: 2018 Adriaan de Groot <groot@kde.org>
- *   SPDX-License-Identifier: GPL-3.0-or-later
+ *   Copyright 2015, Teo Mrnjavac <teo@kde.org>
  *
- *   Calamares is Free Software: see the License-Identifier above.
+ *   Calamares is free software: you can redistribute it and/or modify
+ *   it under the terms of the GNU General Public License as published by
+ *   the Free Software Foundation, either version 3 of the License, or
+ *   (at your option) any later version.
  *
+ *   Calamares is distributed in the hope that it will be useful,
+ *   but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ *   GNU General Public License for more details.
+ *
+ *   You should have received a copy of the GNU General Public License
+ *   along with Calamares. If not, see <http://www.gnu.org/licenses/>.
+ */
+
+/*
+ * Slides images dimensions are 800x440px.
  */
 
 import QtQuick 2.0;
@@ -15,83 +27,66 @@ Presentation
 {
     id: presentation
 
-    function nextSlide() {
-        console.log("QML Component (default slideshow) Next slide");
-        presentation.goToNextSlide();
-    }
-
     Timer {
-        id: advanceTimer
-        interval: 5000
-        running: presentation.activatedInCalamares
+        interval: 20000
+        running: true
         repeat: true
-        onTriggered: nextSlide()
+        onTriggered: presentation.goToNextSlide()
+    }
+    
+    Slide {
+
+        Image {
+            id: background1
+            source: "install.png"
+            width: 800; height: 440
+            fillMode: Image.PreserveAspectFit
+            anchors.centerIn: parent
+        }
+        Text {
+            anchors.horizontalCenter: background1.horizontalCenter
+            anchors.top: background1.bottom
+            text: ""
+            wrapMode: Text.WordWrap
+            width: 800
+            horizontalAlignment: Text.Center
+        }
     }
 
     Slide {
 
-    anchors.fill: parent
-    anchors.verticalCenterOffset: 0
-
-    Image {
-        id: background1
-        source: "1-welcometo.png"
-        width: parent.width; height: parent.height
-        horizontalAlignment: Image.AlignCenter
-        verticalAlignment: Image.AlignTop
-        fillMode: Image.Stretch
-        anchors.fill: parent
-    	}
-
-    Text {
-        anchors.horizontalCenter: background.horizontalCenter
-        anchors.top: background.bottom
-        text: "Welcome to"
-        wrapMode: Text.WordWrap
-        width: presentation.width
-        horizontalAlignment: Text.Center
-    	}
+        Image {
+            id: background2
+            source: "browser.png"
+            width: 800; height: 440
+            fillMode: Image.PreserveAspectFit
+            anchors.centerIn: parent
+        }
+        Text {
+            anchors.horizontalCenter: background2.horizontalCenter
+            anchors.top: background2.bottom
+            text: ""
+            wrapMode: Text.WordWrap
+            width: 800
+            horizontalAlignment: Text.Center
+        }
     }
 
     Slide {
 
-    anchors.fill: parent
-    anchors.verticalCenterOffset: 0
-
-    Image {
-        id: background2
-        source: "2-hepos.png"
-        width: parent.width; height: parent.height
-        horizontalAlignment: Image.AlignCenter
-        verticalAlignment: Image.AlignTop
-        fillMode: Image.Stretch
-        anchors.fill: parent
-    	}
-
-    Text {
-        anchors.horizontalCenter: background.horizontalCenter
-        anchors.top: background.bottom
-        text: "HepOS"
-        wrapMode: Text.WordWrap
-        width: presentation.width
-        horizontalAlignment: Text.Center
-    	}
+        Image {
+            id: background3
+            source: "issues.png"
+            width: 800; height: 440
+            fillMode: Image.PreserveAspectFit
+            anchors.centerIn: parent
+        }
+        Text {
+            anchors.horizontalCenter: background3.horizontalCenter
+            anchors.top: background3.bottom
+            text: ""
+            wrapMode: Text.WordWrap
+            width: 800
+            horizontalAlignment: Text.Center
+        }
     }
-
-
-    // When this slideshow is loaded as a V1 slideshow, only
-    // activatedInCalamares is set, which starts the timer (see above).
-    //
-    // In V2, also the onActivate() and onLeave() methods are called.
-    // These example functions log a message (and re-start the slides
-    // from the first).
-    function onActivate() {
-        console.log("QML Component (default slideshow) activated");
-        presentation.currentSlide = 0;
-    }
-
-    function onLeave() {
-        console.log("QML Component (default slideshow) deactivated");
-    }
-
-}
