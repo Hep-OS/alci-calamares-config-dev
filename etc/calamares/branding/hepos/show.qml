@@ -90,3 +90,4 @@ Presentation
             horizontalAlignment: Text.Center
         }
     }
+}
