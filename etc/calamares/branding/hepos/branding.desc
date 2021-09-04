@@ -123,8 +123,8 @@ navigation: widget
 strings:
     productName:         HepOS
     shortProductName:    HepOS
-    version:             0.1
-    shortVersion:        0.1
+    version:             1.0
+    shortVersion:        1.0
     versionedName:       HepOS
     shortVersionedName:  HepOS
     bootloaderEntryName: HepOS
